@@ -32,29 +32,29 @@ const CopyButton = ({ text }) => {
   );
 };
 
-export default class Citation extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+// export default class Citation extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
 
-  render() {
-    return (
-      <div className="uk-section">
-        <h2 className="uk-text-bold uk-heading-line uk-text-center">
-          <span>Citation</span>
-        </h2>
-        <pre
-          className="uk-padding-small"
-          style={{
-            whiteSpace: 'pre-wrap',
-            wordWrap: 'break-word',
-            overflowWrap: 'break-word',
-          }}
-        >
-          <CopyButton text={this.props.bibtex} />
-          <code>{this.props.bibtex}</code>
-        </pre>
-      </div>
-    );
-  }
-}
+//   render() {
+//     return (
+//       <div className="uk-section">
+//         <h2 className="uk-text-bold uk-heading-line uk-text-center">
+//           <span>Citation</span>
+//         </h2>
+//         <pre
+//           className="uk-padding-small"
+//           style={{
+//             whiteSpace: 'pre-wrap',
+//             wordWrap: 'break-word',
+//             overflowWrap: 'break-word',
+//           }}
+//         >
+//           <CopyButton text={this.props.bibtex} />
+//           <code>{this.props.bibtex}</code>
+//         </pre>
+//       </div>
+//     );
+//   }
+// }
