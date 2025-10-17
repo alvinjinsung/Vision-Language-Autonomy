@@ -1,0 +1,162 @@
+theme: default # default || classic || dark
+organization: Urban Robotics Lab
+twitter: '@denkivvakame'
+title: >
+  CLUE: Adaptively Prioritized Contextual Cues by Leveraging a Unified Semantic Map 
+  for Effective Zero-Shot Object-Goal Navigation
+journal: "ICRA'26 (Under Review)"
+resources:
+  paper (Coming Soon): "#"
+  arxiv (Coming Soon): "#"
+  code (Coming Soon): "#"
+  # video: https://www.youtube.com/embed/onbnb_D1wC8?si=xJczUv716Lt5aO4l&amp;start=1150
+  # demo: https://colab.research.google.com/
+  # huggingface: https://huggingface.co/
+description: "CLUE: Adaptively Prioritized Contextual Cues by Leveraging a Unified Semantic Map for Effective Zero-Shot Object-Goal Navigation"
+
+image: https://denkiwakame.github.io/academic-project-template/teaser.jpg
+url: https://denkiwakame.github.io/academic-project-template
+speakerdeck: # speakerdeck slide ID
+authors:
+  - name: Taeyun Kim
+    affiliation: [1]
+    url: https://www.linkedin.com/in/taeyun-kim-rb/
+    position: # intern
+  - name: Alvin Jinsung Choi
+    affiliation: [1]
+    position: Researcher
+    url: https://alvinjinsung.github.io/
+  - name: Dasol Hong
+    affiliation: [1]
+    position: # Researcher
+    url: https://dazory.github.io/
+  - name: Hyun Myung†
+    affiliation: [1]
+    position: # Researcher
+    url: https://urobot.kaist.ac.kr/url_teams/prof-hyunmyung/
+affiliations:
+  - Urban Robotics Lab, Korea Advanced Institute of Science and Technology
+meta:
+  - "†Corresponding authors"
+bibtex: >
+  @unpublished{kim2025clue,
+    title = {CLUE: Adaptively Prioritized Contextual Cues by Leveraging a Unified Semantic Map for Effective Zero-Shot Object-Goal Navigation},
+    author = {Kim, Taeyun and Choi, Alvin Jinsung and Hong, Dasol and Myung, Hyun},
+    note = {Under review at the IEEE International Conference on Robotics and Automation (ICRA), 2026},
+    year = {2025}
+  }
+
+teaser: CLUE_teaser.png
+abstract: |
+  Zero-shot object-goal navigation (ZSON) is a challenging problem in robotics that requires a comprehensive understanding of both language and visual observations.
+  Contextual cues from rooms and objects are critical, but their relative importance depends on the target:
+  some objects are strongly tied to specific room types, while others are better predicted by nearby co-located objects.
+  Existing methods overlook this distinction, leading to inefficient and inaccurate exploration.
+
+  We present ***CLUE***, a novel navigation framework that adaptively balances the use of contextual rooms and objects by leveraging commonsense knowledge extracted from an offline large language model (LLM).
+  By estimating a target’s association with room types using LLM, the agent prioritizes room cues for predictable objects and object cues for those with weak room associations.
+  Our framework constructs a unified semantic value map that integrates both types of contextual information, adaptively weighted by the target’s ambiguity to guide exploration.
+  Combined with multi-viewpoint verification and an exploration strategy informed by contextual cues, ***CLUE*** achieves robust and efficient navigation.
+  Extensive experiments in simulation and real-world deployments show that our method consistently outperforms state-of-the-art baselines in both success rate (SR) and success weighted by path length (SPL), demonstrating its effectiveness and practicality for real-world navigation tasks.
+
+body:
+  - title: Method
+    text: |
+      <div class="uk-grid-small uk-child-width-expand" uk-grid>
+        <div>
+          <img class="uk-align-center" src="CLUE_framework.png">
+        </div>
+      </div>
+
+      - ***Unified Semantic Value Map***: CLUE constructs a unified semantic value map by balancing contextual room and contextual object cues according to the target's characteristic with entropy-based weighting, enabling more reliable navigation.
+      - ***Contextual Rooms for Global Spatial Understanding***: We use LLM to obtain contextual room types for the target object, and use it to obtain contextual room value with VLM and confidence aggregationfor semantic value map.
+      - ***Contextual Objects for Local Spatial Understanding***: We use LLM to obtain contextual objects for the target object, and use it to obtain contextual object value with Gaussian modeling for semantic value map.
+      - ***Real-Time Capability***: CLUE ensures real-time capability by leveraging offline LLM queries and effectively obtaining commonsense knowledge for navigation.
+      - ***Extensive Experiments***: We conduct extensive experiments on the HM3D dataset and real-world deployments, demonstrating the effectiveness of our approach.
+
+  
+  - title: Experiments
+    text: |
+      ### Unified Semantic Value Map
+
+      <div class="uk-grid-small uk-child-width-expand" uk-grid>
+        <div>
+          <img class="uk-align-center" src="CLUE_weight.png" alt="" style="display: flex; margin: 0 auto; max-width:600px;">
+        </div>
+      </div>
+
+      (a) An example of a low-entropy object (toilet), where contextual rooms provide distinctive guidance while contextual objects do not. 
+      (b) An example of a high-entropy object (TV), where the unified map is more strongly influenced by local contextual objects due to the lack of distinctive spatial evidence from contextual rooms.
+
+      ### Qualitative Results
+
+      <div class="uk-grid-small uk-child-width-expand" uk-grid>
+        <div>
+          <img class="uk-align-center" src="CLUE_results.png" src="CLUE_resource.png" alt="" style="display: flex; margin: 0 auto; max-width:600px;">
+        </div>
+      </div>
+
+      ### Resource Analysis
+
+      <div class="uk-grid-small uk-child-width-expand" uk-grid>
+        <div>
+          <img class="uk-align-center" src="CLUE_resource.png" alt="" style="display: flex; margin: 0 auto; max-width:600px;">
+        </div>
+      </div>
+
+  - title: Real-World Deployment
+    text: |
+      CLUE is deployed on a customized UGV platform based on a Clearpath Jackal, equipped with an Intel NUC, a velodyne VLP-16 LiDAR, and a Ricoh Theta Z1 camera.
+
+      <div class="uk-grid-small uk-child-width-expand" uk-grid>
+        <div>
+          <img class="uk-align-center" src="CLUE_realworld.png">
+        </div>
+      </div>
+
+      ### Video Demo
+
+      <div class="uk-slider" uk-slider="draggable: false">
+        <div class="uk-slider-items uk-child-width-expand" uk-grid>
+          <div>
+            <video
+              src="https://yootheme.com/site/images/media/yootheme-pro.mp4"
+              loop
+              muted
+              uk-video="autoplay:inview"
+              />
+          </div>
+          <div>
+            <video
+              src="https://yootheme.com/site/images/media/yootheme-pro.mp4"
+              loop
+              muted
+              uk-video="autoplay:inview"
+              />
+          </div>
+          <div>
+            <video
+              src="https://yootheme.com/site/images/media/yootheme-pro.mp4"
+              loop
+              muted
+              uk-video="autoplay:inview"
+              />
+          </div>
+        </div>
+        <div class="uk-flex uk-flex-center uk-margin-small">
+          <a class="uk-icon-button" href uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-icon-button uk-margin-small-left" href uk-slidenav-next uk-slider-item="next"></a>
+        </div>
+      </div>
+
+projects: # relevant projects
+  - title: NeuDonatello
+    description: NeuDonatello is a novel neural scene reconstruction method that explicitly models SDF uncertainty and adaptively regularizes the reconstruction process.
+    img: "NeuDonatello.png"
+    journal: "AAAI'26 (Under Review)"
+    url: https://alvinjinsung.github.io/NeuDonatello/
+  - title: Relevant Project II
+    description: abstract text
+    img: 001.jpg
+    journal: "EFGH'22"
+    url: https://denkiwakame.github.io/academic-project-template/

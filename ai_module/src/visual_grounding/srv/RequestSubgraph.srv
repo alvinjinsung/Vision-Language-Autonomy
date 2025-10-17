@@ -1,8 +1,0 @@
-# Request
-string[] objects_of_interest
-int32 k
----
-# Response
-bool success
-string message
-string graph # TODO

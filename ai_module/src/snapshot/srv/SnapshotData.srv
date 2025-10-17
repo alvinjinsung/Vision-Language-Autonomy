@@ -1,9 +1,0 @@
-# Request
-string question
----
-# Response
-bool success
-string message
-sensor_msgs/Image image
-sensor_msgs/Image image_annotated
-snapshot/MapObject[] objects
