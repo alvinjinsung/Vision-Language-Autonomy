@@ -5,8 +5,8 @@ title: >
   Vision-Language-Autonomy
 journal: "IROS'25 Workshop on AI Meets Autonomy: CMU VLA Challegne (4th place)"
 resources:
-  paper (Coming Soon): "#"
-  arxiv (Coming Soon): "#"
+  # paper (Coming Soon): "#"
+  # arxiv (Coming Soon): "#"
   code: https://github.com/url-kaist/Vision-Language-Autonomy
   # video: https://www.youtube.com/embed/onbnb_D1wC8?si=xJczUv716Lt5aO4l&amp;start=1150
   # demo: https://colab.research.google.com/
@@ -45,7 +45,7 @@ authors:
     affiliation: [1]
     url: https://urobot.kaist.ac.kr/url_teams/mr-wanhee-kim/
     position: # intern
-  - name: Wooju Lee
+  - name: Wooju Lee*
     affiliation: [1]
     position: # Researcher
     url: https://woojulee24.github.io/
@@ -65,19 +65,19 @@ meta:
 #     howpublished = {\url{https://github.com/your-repo-link}},
 #     note         = {Workshop Challenge, [Conference/Workshop Name], [Year]}
 #   }
-teaser: CLUE_teaser.png
+teaser: VLA_teaser.png
 abstract: |
-  We developed Vision-Language-Autonomy framework capable of taking in natural language queries or commands about a scene and generate the appropriate navigation-based response through reasoning about semantic and spatial relationships.
+  We developed a ***Vision-Language-Autonomy framework*** capable of taking in natural language queries or commands about a scene and generate the appropriate navigation-based response through reasoning about semantic and spatial relationships.
   Our framework works in a initially unknown environment and navigate to appropriate viewpoints to discover and validate spatial relations and attributes.
   Our system is equipped with a 3D LiDAR and a 360 camera, along with autonomy system capable of estimating sensor pose, analyze the terrain, avoid collisions, and navigate to waypoints.
 
   Our system is composed of four main components:
-  - Perception module
-  - 3D Scene Graph module
-  - Object-Goal Navigation module
-  - Visual Grounding module
+  - ***Perception module***: Robust object detection and tracking using 3D LiDAR and 360 camera.
+  - ***3D Scene Graph module***: Building a hierarchical 3D scene graph using the detected objects.
+  - ***Object-Goal Navigation module***: Navigating to the goal object using the sensor input and natural language query.
+  - ***Visual Grounding module***: Grounding the language query to the given 3D environment and resoning to generate the appropriate navigation-based response.
 
-  Integraded Vision-Language-Autonomy framework can reason about three types of questions:
+  Integrated Vision-Language-Autonomy framework can reason about three types of questions:
   - Numerical questions: "How many chairs are there between the table and the sofa?"
   - Object reference questions: "Find the potted plant closest to the table."
   - Instruction-following questions: "Please go to the kitchen avoiding the path between the fridge and the oven."
@@ -87,7 +87,7 @@ body:
     text: |
       <div class="uk-grid-small uk-child-width-expand" uk-grid>
         <div>
-          <img class="uk-align-center" src="CLUE_framework.png">
+          <img class="uk-align-center" src="VLA_framework.png">
         </div>
       </div>
 
