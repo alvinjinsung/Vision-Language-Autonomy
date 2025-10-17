@@ -240,8 +240,8 @@ projects: # relevant projects
     img: "NeuDonatello.png"
     journal: "AAAI'26 (Under Review)"
     url: https://alvinjinsung.github.io/NeuDonatello/
-  - title: Relevant Project II
-    description: abstract text
-    img: 001.jpg
-    journal: "EFGH'22"
-    url: https://denkiwakame.github.io/academic-project-template/
+  - title: CLUE
+    description: CLUE adaptively balances the use of contextual rooms and contextual objects by leveraging commonsense knowledge to build a unified semantic map for effective Zero-Shot Object-Goal Navigation.
+    img: "CLUE.png"
+    journal: "ICRA'26 (Under Review)"
+    url: https://alvinjinsung.github.io/CLUE/
