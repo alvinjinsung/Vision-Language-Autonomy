@@ -93,7 +93,7 @@ body:
 
       ### Perception Module
 
-      <div class="uk-grid-small uk-child-width-expand" uk-grid>
+      <div class="uk-grid-small uk-child-width-xlarge" uk-grid>
         <div>
           <img class="uk-align-center" src="VLA_perception.png">
         </div>
@@ -206,95 +206,26 @@ body:
       <div class="uk-slider" uk-slider="draggable: false">
         <div class="uk-slider-items uk-child-width-expand" uk-grid>
           <div>
-            <video
-              src="VLA_exp_num.mp4"
-              loop
-              muted
-              uk-video="autoplay:inview"
-              />
-          </div>
-          <span class="uk-text-meta">How many sofas are below a window?</figcaption>
-          <div>
-            <video
-              src="VLA_exp_instruc_following.mp4"
-              loop
-              muted
-              uk-video="autoplay:inview"
-              />
-          </div>
-          <span class="uk-text-meta">First, go to the potted plant furthest from the hookah, then take the path between the two columns, and stop at the tray on the table.</figcaption>
-        </div>
-        <div class="uk-flex uk-flex-center uk-margin-small">
-          <a class="uk-icon-button" href uk-slidenav-previous uk-slider-item="previous"></a>
-          <a class="uk-icon-button uk-margin-small-left" href uk-slidenav-next uk-slider-item="next"></a>
-        </div>
-      </div>
-
-
-      ### Unified Semantic Value Map
-
-      <div class="uk-grid-small uk-child-width-expand" uk-grid>
-        <div>
-          <img class="uk-align-center" src="CLUE_weight.png" alt="" style="display: flex; margin: 0 auto; max-width:600px;">
-        </div>
-      </div>
-
-      (a) An example of a low-entropy object (toilet), where contextual rooms provide distinctive guidance while contextual objects do not. 
-      (b) An example of a high-entropy object (TV), where the unified map is more strongly influenced by local contextual objects due to the lack of distinctive spatial evidence from contextual rooms.
-
-      ### Qualitative Results
-
-      <div class="uk-grid-small uk-child-width-expand" uk-grid>
-        <div>
-          <img class="uk-align-center" src="CLUE_results.png" src="CLUE_resource.png" alt="" style="display: flex; margin: 0 auto; max-width:600px;">
-        </div>
-      </div>
-
-      ### Resource Analysis
-
-      <div class="uk-grid-small uk-child-width-expand" uk-grid>
-        <div>
-          <img class="uk-align-center" src="CLUE_resource.png" alt="" style="display: flex; margin: 0 auto; max-width:600px;">
-        </div>
-      </div>
-
-  - title: Real-World Deployment
-    text: |
-      CLUE is deployed on a customized UGV platform based on a Clearpath Jackal, equipped with an Intel NUC, a velodyne VLP-16 LiDAR, and a Ricoh Theta Z1 camera.
-
-      <div class="uk-grid-small uk-child-width-expand" uk-grid>
-        <div>
-          <img class="uk-align-center" src="CLUE_realworld.png">
-        </div>
-      </div>
-
-      ### Video Demo
-
-      <div class="uk-slider" uk-slider="draggable: false">
-        <div class="uk-slider-items uk-child-width-expand" uk-grid>
-          <div>
-            <video
-              src="https://yootheme.com/site/images/media/yootheme-pro.mp4"
-              loop
-              muted
-              uk-video="autoplay:inview"
-              />
+            <div>
+              <video
+                src="VLA_exp_num.mp4"
+                loop
+                muted
+                uk-video="autoplay:inview"
+                />
+            </div>
+            <span class="uk-text-meta">How many sofas are below a window?</figcaption>
           </div>
           <div>
-            <video
-              src="https://yootheme.com/site/images/media/yootheme-pro.mp4"
-              loop
-              muted
-              uk-video="autoplay:inview"
-              />
-          </div>
-          <div>
-            <video
-              src="https://yootheme.com/site/images/media/yootheme-pro.mp4"
-              loop
-              muted
-              uk-video="autoplay:inview"
-              />
+            <div>
+              <video
+                src="VLA_exp_instruc_following.mp4"
+                loop
+                muted
+                uk-video="autoplay:inview"
+                />
+            </div>
+            <span class="uk-text-meta">First, go to the potted plant furthest from the hookah, then take the path between the two columns, and stop at the tray on the table.</figcaption>
           </div>
         </div>
         <div class="uk-flex uk-flex-center uk-margin-small">
