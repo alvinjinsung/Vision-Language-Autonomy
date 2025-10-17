@@ -17,18 +17,38 @@ image: https://denkiwakame.github.io/academic-project-template/teaser.jpg
 url: https://denkiwakame.github.io/academic-project-template
 speakerdeck: # speakerdeck slide ID
 authors:
-  - name: Taeyun Kim
-    affiliation: [1]
-    url: https://www.linkedin.com/in/taeyun-kim-rb/
-    position: # intern
-  - name: Alvin Jinsung Choi
-    affiliation: [1]
-    position: Researcher
-    url: https://alvinjinsung.github.io/
-  - name: Dasol Hong
+  - name: Dasol Hong*
     affiliation: [1]
     position: # Researcher
     url: https://dazory.github.io/
+  - name: Juhye Park*
+    affiliation: [1]
+    position: # Researcher
+    url: https://jayhi-park.github.io/
+  - name: Taeyun Kim*
+    affiliation: [1]
+    position: # Researcher
+    url: https://www.linkedin.com/in/taeyun-kim-rb/
+  - name: Alvin Jinsung Choi*
+    affiliation: [1]
+    url: https://alvinjinsung.github.io/
+    position: # intern
+  - name: Jeewon Kim*
+    affiliation: [1]
+    url: https://www.linkedin.com/in/jeewon-kim-003093221/
+    position: # intern
+  - name: Jei Kong*
+    affiliation: [1]
+    url: https://www.linkedin.com/in/jei-kong/
+    position: # intern
+  - name: Wanhee Kim*
+    affiliation: [1]
+    url: https://urobot.kaist.ac.kr/url_teams/mr-wanhee-kim/
+    position: # intern
+  - name: Wooju Lee
+    affiliation: [1]
+    position: # Researcher
+    url: https://woojulee24.github.io/
   - name: Hyun Myung†
     affiliation: [1]
     position: # Researcher
@@ -36,15 +56,15 @@ authors:
 affiliations:
   - Urban Robotics Lab, Korea Advanced Institute of Science and Technology
 meta:
-  - "†Corresponding authors"
-bibtex: >
-  @unpublished{kim2025clue,
-    title = {CLUE: Adaptively Prioritized Contextual Cues by Leveraging a Unified Semantic Map for Effective Zero-Shot Object-Goal Navigation},
-    author = {Kim, Taeyun and Choi, Alvin Jinsung and Hong, Dasol and Myung, Hyun},
-    note = {Under review at the IEEE International Conference on Robotics and Automation (ICRA), 2026},
-    year = {2025}
-  }
-
+  - "*These authors contributed equally; †Corresponding authors"
+# bibtex: >
+#   @misc{urlkaist2025vlachallenge,
+#     title        = {Vision-Language-Autonomy: CMU VLA Challenge on IROS'25 Workshop on AI Meets Autonomy},
+#     author       = {Your Team Name},
+#     year         = {2025},
+#     howpublished = {\url{https://github.com/your-repo-link}},
+#     note         = {Workshop Challenge, [Conference/Workshop Name], [Year]}
+#   }
 teaser: CLUE_teaser.png
 abstract: |
   Zero-shot object-goal navigation (ZSON) is a challenging problem in robotics that requires a comprehensive understanding of both language and visual observations.
