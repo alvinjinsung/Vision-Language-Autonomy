@@ -214,7 +214,7 @@ body:
                 uk-video="autoplay:inview"
                 />
             </div>
-            <span class="uk-text-meta">How many sofas are below a window?</figcaption>
+            <span class="uk-text-meta">How many sofas are below a window? Ans: 2 (with confidence 0.93)</figcaption>
           </div>
           <div>
             <div>
