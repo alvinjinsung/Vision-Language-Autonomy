@@ -99,6 +99,7 @@ body:
         </div>
       </div>
 
+
       <div class="uk-grid-small uk-child-width-expand" uk-grid>
         <div>
           <img class="uk-align-center" src="VLA_perception_yolo.png" alt="" style="display: flex; margin: 0 auto; max-width:600px;>
@@ -117,6 +118,7 @@ body:
           <video src="VLA_sg.mp4" loop muted uk-video="autoplay:inview" />
         </div>
       </div>
+      
 
       <div class="uk-grid-small uk-child-width-expand" uk-grid>
         <div>
