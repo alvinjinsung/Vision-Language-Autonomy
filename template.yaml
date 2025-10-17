@@ -78,9 +78,9 @@ abstract: |
   - ***Visual Grounding Module***: Grounding the language query to the given 3D environment and resoning to generate the appropriate navigation-based response.
 
   Integrated Vision-Language-Autonomy framework can reason about three types of questions:
-  - Numerical questions: "How many chairs are there between the table and the sofa?"
-  - Object reference questions: "Find the potted plant closest to the table."
-  - Instruction-following questions: "Please go to the kitchen avoiding the path between the fridge and the oven."
+  - ***Numerical questions***: "How many chairs are there between the table and the sofa?"
+  - ***Object reference questions***: "Find the potted plant closest to the table."
+  - ***Instruction-following questions***: "Please go to the kitchen avoiding the path between the fridge and the oven."
 
 body:
   - title: Method
@@ -95,17 +95,17 @@ body:
 
       <div class="uk-grid-small uk-child-width-expand" uk-grid>
         <div>
-          <img class="uk-align-center" src="VLA_perception.png">
+          <img class="uk-align-center" src="VLA_perception.png" alt="" style="display: flex; margin: 0 auto; max-width:600px;>
         </div>
       </div>
 
       <div class="uk-grid-small uk-child-width-expand" uk-grid>
         <div>
-          <img class="uk-align-center" src="VLA_perception_yolo.png">
+          <img class="uk-align-center" src="VLA_perception_yolo.png" alt="" style="display: flex; margin: 0 auto; max-width:600px;>
         </div>
       </div>
 
-      We use YOLO-World for object detection and tracking.
+      We use *YOLO-World for object detection* and tracking.
       3D LiDAR points are projected into 2D images and 2D images are masked with SAM mask.
       With class labels verified using YOLO-World and SAM masks, we project point clouds back to 3D space with class labels and CLIP features.
 
@@ -124,7 +124,7 @@ body:
         </div>
       </div>
 
-      We build a hierarchical 3D scene graph using the detected objects.
+      We build a *hierarchical 3D scene graph* using the detected objects.
       The layers consists of detection, object, keyframe, place, room, and scene.
       Object layer contains the detected objects that are registered with their 3D bounding boxes.
       Detection layer contains the detected objects that are not registered with their 3D bounding boxes.
@@ -141,11 +141,11 @@ body:
         </div>
       </div>
 
-      We developed a exploration strategy that guides the agent to explore the environment in a way that is efficient and effective in finding the goal object.
+      We developed a *exploration strategy* that guides the agent to explore the environment in a way that is efficient and effective in finding the goal object.
       We use three types of exploration strategies:
-      - Geometric frontier-based exploration: Navigates to the geometrically closest frontier.
-      - Semantic frontier-based exploration: Navigates to the semantically closest frontier using CLIP embedded semantic value map.
-      - Countour-based exploration: Navigates along the environment’s contours for thorough area coverage.
+      - *Geometric frontier-based exploration*: Navigates to the geometrically closest frontier.
+      - *Semantic frontier-based exploration*: Navigates to the semantically closest frontier using CLIP embedded semantic value map.
+      - *Countour-based exploration*: Navigates along the environment’s contours for thorough area coverage.
 
       <div class="uk-grid-small uk-child-width-1-2 uk-child-width-1-3@m" uk-grid>
         <div>
@@ -158,21 +158,86 @@ body:
             <div>
               <video src="VLA_exploration_semantic.mp4" loop muted uk-video="autoplay:inview" />
             </div>
-            <span class="uk-text-meta">Background-level transformation</figcaption>
+            <span class="uk-text-meta">Semantic frontier-based exploration</figcaption>
         </div>
         <div>
             <div>
-              <img src="VLA_exploration_contour.png" />
+              <img src="VLA_exploration_coverage.png" />
             </div>
             <span class="uk-text-meta">Countour-based exploration</figcaption>
         </div>
       </div>
 
+      ### Visual Grounding Module
 
+      <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+        <div>
+            <div>
+              <img src="VLA_vg_find.png" />
+            </div>
+            <span class="uk-text-meta">Find task reasoning flow</figcaption>
+        </div>
+        <div>
+            <div>
+              <img src="VLA_vg_count.png" />
+            </div>
+            <span class="uk-text-meta">Numerical task reasoning flow</figcaption>
+        </div>
+      </div>
 
-  
-  - title: Experiments
+      <div class="uk-grid-small uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+        <div>
+            <div>
+              <img src="VLA_vg_multiview.png" />
+            </div>
+            <span class="uk-text-meta">Multiview observation</figcaption>
+        </div>
+        <div>
+            <div>
+              <img src="VLA_vg_confidence.png" />
+            </div>
+            <span class="uk-text-meta">Confidence aggregation</figcaption>
+        </div>
+      </div>
+
+      We utilize VLM to reason about the language query and the 3D environment.
+      For each related object detection, the agent performs multiview observation using object-hull. After observing multiple views for each group, visual grounding module performs reasoning.
+      We use multiple VLM models in parallel and aggregate the results for better reasoning.
+      Confidence aggregation based on entropy is used to determine the most confident answer for the question.
+      The module outputs the answer with the answer candidate which confidence is higher than a threshold.
+
+  - title: Demonstration
     text: |
+      Our framework successfully reason about the language query of the unknown 3D environment.
+
+      <div class="uk-slider" uk-slider="draggable: false">
+        <div class="uk-slider-items uk-child-width-expand" uk-grid>
+          <div>
+            <video
+              src="VLA_exp_num.mp4"
+              loop
+              muted
+              uk-video="autoplay:inview"
+              />
+          </div>
+          <span class="uk-text-meta">How many sofas are below a window?</figcaption>
+          <div>
+            <video
+              src="VLA_exp_instruc_following.mp4"
+              loop
+              muted
+              uk-video="autoplay:inview"
+              />
+          </div>
+          <span class="uk-text-meta">First, go to the potted plant furthest from the hookah, then take the path between the two columns, and stop at the tray on the table.</figcaption>
+        </div>
+        <div class="uk-flex uk-flex-center uk-margin-small">
+          <a class="uk-icon-button" href uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-icon-button uk-margin-small-left" href uk-slidenav-next uk-slider-item="next"></a>
+        </div>
+      </div>
+
+
       ### Unified Semantic Value Map
 
       <div class="uk-grid-small uk-child-width-expand" uk-grid>
