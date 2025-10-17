@@ -99,13 +99,6 @@ body:
         </div>
       </div>
 
-
-      <div class="uk-grid-small uk-child-width-expand" uk-grid>
-        <div>
-          <img class="uk-align-center" src="VLA_perception_yolo.png" alt="" style="display: flex; margin: 0 auto; max-width:600px;>
-        </div>
-      </div>
-
       We use *YOLO-World for object detection* and tracking.
       3D LiDAR points are projected into 2D images and 2D images are masked with SAM mask.
       With class labels verified using YOLO-World and SAM masks, we project point clouds back to 3D space with class labels and CLIP features.
@@ -202,10 +195,10 @@ body:
         </div>
       </div>
 
-      We utilize VLM to reason about the language query and the 3D environment.
-      For each related object detection, the agent performs multiview observation using object-hull. After observing multiple views for each group, visual grounding module performs reasoning.
+      We utilize *VLM to reason about the language query and the 3D environment*.
+      For each related object detection, the agent performs *multiview observation* using object-hull. After observing multiple views for each group, visual grounding module performs reasoning.
       We use multiple VLM models in parallel and aggregate the results for better reasoning.
-      Confidence aggregation based on entropy is used to determine the most confident answer for the question.
+      *Confidence aggregation based on entropy* is used to determine the most confident answer for the question.
       The module outputs the answer with the answer candidate which confidence is higher than a threshold.
 
   - title: Demonstration
