@@ -1,18 +1,17 @@
 theme: default # default || classic || dark
 organization: Urban Robotics Lab
-twitter: '@denkivvakame'
+twitter: # '@denkivvakame'
 title: >
-  CLUE: Adaptively Prioritized Contextual Cues by Leveraging a Unified Semantic Map 
-  for Effective Zero-Shot Object-Goal Navigation
+  Vision-Language-Autonomy
 journal: "IROS'25 Workshop on AI Meets Autonomy: CMU VLA Challegne (4th place)"
 resources:
   paper (Coming Soon): "#"
   arxiv (Coming Soon): "#"
-  code (Coming Soon): "#"
+  code: https://github.com/url-kaist/Vision-Language-Autonomy
   # video: https://www.youtube.com/embed/onbnb_D1wC8?si=xJczUv716Lt5aO4l&amp;start=1150
   # demo: https://colab.research.google.com/
   # huggingface: https://huggingface.co/
-description: "CLUE: Adaptively Prioritized Contextual Cues by Leveraging a Unified Semantic Map for Effective Zero-Shot Object-Goal Navigation"
+description: "Vision-Language-Autonomy: CMU VLA Challenge on IROS'25 Workshop on AI Meets Autonomy (4th place)"
 
 image: https://denkiwakame.github.io/academic-project-template/teaser.jpg
 url: https://denkiwakame.github.io/academic-project-template
