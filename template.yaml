@@ -67,16 +67,20 @@ meta:
 #   }
 teaser: CLUE_teaser.png
 abstract: |
-  Zero-shot object-goal navigation (ZSON) is a challenging problem in robotics that requires a comprehensive understanding of both language and visual observations.
-  Contextual cues from rooms and objects are critical, but their relative importance depends on the target:
-  some objects are strongly tied to specific room types, while others are better predicted by nearby co-located objects.
-  Existing methods overlook this distinction, leading to inefficient and inaccurate exploration.
+  We developed Vision-Language-Autonomy framework capable of taking in natural language queries or commands about a scene and generate the appropriate navigation-based response through reasoning about semantic and spatial relationships.
+  Our framework works in a initially unknown environment and navigate to appropriate viewpoints to discover and validate spatial relations and attributes.
+  Our system is equipped with a 3D LiDAR and a 360 camera, along with autonomy system capable of estimating sensor pose, analyze the terrain, avoid collisions, and navigate to waypoints.
 
-  We present ***CLUE***, a novel navigation framework that adaptively balances the use of contextual rooms and objects by leveraging commonsense knowledge extracted from an offline large language model (LLM).
-  By estimating a target’s association with room types using LLM, the agent prioritizes room cues for predictable objects and object cues for those with weak room associations.
-  Our framework constructs a unified semantic value map that integrates both types of contextual information, adaptively weighted by the target’s ambiguity to guide exploration.
-  Combined with multi-viewpoint verification and an exploration strategy informed by contextual cues, ***CLUE*** achieves robust and efficient navigation.
-  Extensive experiments in simulation and real-world deployments show that our method consistently outperforms state-of-the-art baselines in both success rate (SR) and success weighted by path length (SPL), demonstrating its effectiveness and practicality for real-world navigation tasks.
+  Our system is composed of four main components:
+  - Perception module
+  - 3D Scene Graph module
+  - Object-Goal Navigation module
+  - Visual Grounding module
+
+  Integraded Vision-Language-Autonomy framework can reason about three types of questions:
+  - Numerical questions: "How many chairs are there between the table and the sofa?"
+  - Object reference questions: "Find the potted plant closest to the table."
+  - Instruction-following questions: "Please go to the kitchen avoiding the path between the fridge and the oven."
 
 body:
   - title: Method
