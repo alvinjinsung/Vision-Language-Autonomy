@@ -238,7 +238,7 @@ projects: # relevant projects
   - title: NeuDonatello
     description: NeuDonatello is a novel neural scene reconstruction method that explicitly models SDF uncertainty and adaptively regularizes the reconstruction process.
     img: "NeuDonatello.png"
-    journal: "AAAI'26 (Under Review)"
+    journal: "CVPR'26 (Under Review)"
     url: https://alvinjinsung.github.io/NeuDonatello/
   - title: CLUE
     description: CLUE adaptively balances the use of contextual rooms and contextual objects by leveraging commonsense knowledge to build a unified semantic map for effective Zero-Shot Object-Goal Navigation.
