@@ -243,5 +243,5 @@ projects: # relevant projects
   - title: CLUE
     description: CLUE adaptively balances the use of contextual rooms and contextual objects by leveraging commonsense knowledge to build a unified semantic map for effective Zero-Shot Object-Goal Navigation.
     img: "CLUE.png"
-    journal: "ICRA'26 (Under Review)"
+    journal: "ICRA'26"
     url: https://alvinjinsung.github.io/CLUE/
